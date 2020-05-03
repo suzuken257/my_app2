@@ -1,0 +1,8 @@
+.contents
+  .contents__box
+    = form_with model: @post, local: true do |f| 
+      %h3 更新する
+      = f.text_field :name, placeholder: "name"
+      = f.text_field :image, placeholder: "image"
+      = f.text_area :text, placeholder: "text", rows: "10" 
+      = f.submit "SEND"
