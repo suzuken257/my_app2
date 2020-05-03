@@ -4,7 +4,8 @@
       %img(src="@post.image" alt="")/
     .main__content__box__text
       = simple_format(@post.text)
-      = @post.name 
+      %span  投稿者
+      =link_to "#{@post.user.nickname}", "/users/#{@post.user.id}"
       %span(class="main__content__box__text__more")
         %i.fa.fa-list-ul
           %ul(class="main__content__box__text__more__list")
@@ -12,3 +13,4 @@
               =link_to '編集', "/posts/#{@post.id}/edit", method: :get
             %li
               =link_to '削除', "/posts/#{@post.id}", method: :delete
+    =link_to 'トップページ', root_path

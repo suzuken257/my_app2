@@ -1,0 +1,20 @@
+.main__content
+%p
+  = @nickname
+  さんの投稿一覧
+- @posts.each do |post|
+  .main__content__box
+  .main__content__box__item 
+    %img{src:"#{post.image}", alt:"画像"}/
+  .main__content__box__text
+    = simple_format(post.text)
+    %span(class="main__content__box__text__more")
+      %i.fa.fa-list-ul
+        %ul(class="main__content__box__text__more__list")
+          %li
+          =link_to '詳細', "/posts/#{post.id}"
+          -if user_signed_in? && current_user.id == post.user_id  
+            %li
+            =link_to '編集', "/posts/#{post.id}/edit"
+            %li
+            =link_to '削除', "/posts/#{post.id}", method: :delete
