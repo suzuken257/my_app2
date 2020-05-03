@@ -55,6 +55,10 @@
         &__item {
           background-color: peru;
           height: 200px;
+          img {
+            width: 288px;
+            height: 200px;
+          }
         }
         &__text {
           width: 100%;
