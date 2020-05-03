@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only:[:edit,:show]
+  before_action :move_to_index, except: [:index, :show]
   def index
     @posts = Post.all
   end
@@ -28,5 +29,8 @@ class PostsController < ApplicationController
   end
   def set_post
     @post=Post.find(params[:id])
+  end
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end

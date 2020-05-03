@@ -4,10 +4,15 @@
       <i class="fas fa-chess-queen"></i>
     .header__title 
       タイトル
-    .header__right   
+    .header__right  
+    -if user_signed_in?
       %span(class="header__right__login")
         = link_to  "投稿する", new_post_path, class: "post"
-        = "ログイン"
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+    -else
+      %span(class="header__right__login")
+        = link_to "新規登録", new_user_registration_path, class: 'post'
+        = link_to "ログイン", new_user_session_path, class: 'post'
   .main
     .main__side
       %ul
