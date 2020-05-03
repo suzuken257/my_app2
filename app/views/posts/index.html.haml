@@ -18,8 +18,8 @@
     .main__content
       - @posts.each do |post|
         .main__content__box
-          .main__content__box__item   
-            %img(src="post.image" alt="")/
+          .main__content__box__item 
+            %img{src:"#{post.image}", alt:"画像"}/
           .main__content__box__text
             = simple_format(post.text)
             = post.name 
