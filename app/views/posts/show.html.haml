@@ -1,7 +1,7 @@
 .main__content
   .main__content__box
     .main__content__box__item   
-      %img(src="@post.image" alt="")/
+      %img(src="#{@post.image}" alt="")/
     .main__content__box__text
       = simple_format(@post.text)
       %span  投稿者
@@ -13,4 +13,24 @@
               =link_to '編集', "/posts/#{@post.id}/edit", method: :get
             %li
               =link_to '削除', "/posts/#{@post.id}", method: :delete
-    =link_to 'トップページ', root_path
+    .container
+  - if current_user
+    = form_with model: [@post, @comment], local: true do |form|
+      = form.text_area :text, placeholder: "コメントする", rows: "2"
+      = form.submit "SEND"
+  - else
+    %strong
+      %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+
+  .comments
+  %h4 ＜コメント一覧＞
+  - if @comments
+    - @comments.each do |comment|
+      %p
+        %strong
+          = link_to comment.user.nickname, "/users/#{comment.user_id}"
+          ：
+        = comment.text
+
+
+  =link_to 'トップページ', root_path
