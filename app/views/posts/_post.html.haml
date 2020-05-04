@@ -1,5 +1,6 @@
 .main__content__box
   .main__content__box__item 
+    = post.title
     %img{src:"#{post.image}", alt:"画像"}/
   .main__content__box__text
     = simple_format(post.text)
@@ -13,5 +14,3 @@
           -if user_signed_in? && current_user.id == post.user_id  
             %li
             =link_to '編集', "/posts/#{post.id}/edit"
-            %li
-            =link_to '削除', "/posts/#{post.id}", method: :delete
