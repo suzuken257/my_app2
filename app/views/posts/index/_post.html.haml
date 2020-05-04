@@ -11,6 +11,6 @@
         %ul(class="main__content__box__text__more__list")
           %li
           =link_to '詳細', "/posts/#{post.id}"
-          -if user_signed_in? && current_user.id == post.user_id  
+          -if user_signed_in? && current_user.id == post.user_id
             %li
             =link_to '編集', "/posts/#{post.id}/edit"
