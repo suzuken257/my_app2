@@ -1,0 +1,9 @@
+.main
+  .main__side
+    %ul
+      %li スポーツ
+      %li お笑い
+      %li 本
+      %li 経済
+  .main__content
+    =render partial: "posts/index/post", collection: @posts

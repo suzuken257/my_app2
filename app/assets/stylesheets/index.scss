@@ -14,7 +14,7 @@
     &__left {
 
     }
-    &__title  {
+    &__search  {
       font-size: 30px;
       text-align: center;
       display: flex;
@@ -51,6 +51,7 @@
         margin: 10px 10px;
         width: 288px;
         height: 280px;
+        position: relative;
         background-color: whitesmoke;
         &__item {
           background-color: peru;
@@ -61,11 +62,12 @@
           }
         }
         &__text {
-          width: 100%;
+          position: absolute;
+          bottom: 0;
           &__more {
             display: inline;
             &__list {
-
+              
             }
           }
         }
