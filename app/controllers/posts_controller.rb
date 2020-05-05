@@ -8,18 +8,30 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def create
-    Post.create(post_params)
+    if Post.create(post_params)
+      redirect_to  "/users/#{current_user.id}", notice: '投稿が完了しました'
+    else
+      render :new
+    end
     
   end
   def destroy
     post=Post.find(params[:id])
-    post.destroy
+    if post.destroy
+      redirect_to "/users/#{current_user.id}", notice: '削除が完了しました'
+    else
+      render :destroy
+    end
   end
   def edit
   end
   def update
     post  = Post.find(params[:id])
-    post.update(post_params)
+    if post.update(post_params)
+      redirect_to "/users/#{current_user.id}", notice: '編集が完了しました'
+    else
+      render :edit
+    end
   end
   def show
     @comment=Comment.new
