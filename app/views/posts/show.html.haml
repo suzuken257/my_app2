@@ -1,7 +1,7 @@
 .main__content
   .main__content__box
     .main__content__box__item   
-      %img(src="#{@post.image}" alt="")/
+      %iframe#ytplayer{:frameborder => "0", :height => "500", :src => "https://www.youtube.com/embed/#{@post.video}", :type => "text/html", :width => "800"}
     .main__content__box__text
       = simple_format(@post.text)
       %span  投稿者

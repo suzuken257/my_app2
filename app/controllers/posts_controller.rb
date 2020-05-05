@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
   def create
     Post.create(post_params)
+    
   end
   def destroy
     post=Post.find(params[:id])
@@ -30,7 +31,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title,:image,:text).merge(user_id: current_user.id)
+    params.require(:post).permit(:title,:video,:text).merge(user_id: current_user.id)
   end
   def set_post
     @post=Post.find(params[:id])
