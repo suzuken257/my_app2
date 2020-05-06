@@ -1,37 +1,36 @@
-.main__content
-  .main__content__box
-    .main__content__box__item   
-      %iframe#ytplayer{:frameborder => "0", :height => "500", :src => "https://www.youtube.com/embed/#{@post.video}", :type => "text/html", :width => "800"}
-    .main__content__box__text
-      = simple_format(@post.text)
-      %span  投稿者
-      =link_to "#{@post.user.nickname}", "/users/#{@post.user.id}"
-      %span(class="main__content__box__text__more")
-        %i.fa.fa-list-ul
-          %ul(class="main__content__box__text__more__list")
-          -if user_signed_in? && current_user.id == @post.user_id
-            %li
-              =link_to '編集', "/posts/#{@post.id}/edit", method: :get
-            %li
-              =link_to '削除', "/posts/#{@post.id}", method: :delete
-    .container
-  - if current_user
-    = form_with model: [@post, @comment], local: true do |form|
-      = form.text_area :text, placeholder: "コメントする", rows: "2"
-      = form.submit "SEND"
-  - else
-    %strong
-      %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
-
-  .comments
-  %h4 ＜コメント一覧＞
-  - if @comments
-    - @comments.each do |comment|
-      %p
+.wrapper
+  = render 'posts/index/header'  
+  .show-main
+    .show-main__content
+      .show-main__content__item   
+        %iframe#ytplayer{:frameborder => "0", :height => "500", :src => "https://www.youtube.com/embed/#{@post.video}", :type => "text/html", :width => "800"}
+      .show-main__content__text
+        = simple_format(@post.text)
+        %span  投稿者
+        =link_to "#{@post.user.nickname}", "/users/#{@post.user.id}"
+        %span(class="show-main__content__text__more")
+          %i.fa.fa-list-ul
+            %ul(class="show-main__content__text__more__list")
+            -if user_signed_in? && current_user.id == @post.user_id
+              %li
+                =link_to '編集', "/posts/#{@post.id}/edit"
+              %li
+                =link_to '削除', "/posts/#{@post.id}", method: :delete
+      .container
+      - if current_user
+        = form_with model: [@post, @comment], local: true, id: "new_comment" do |form|
+          = form.text_area :text, placeholder: "コメントする", rows: "2", class: "text_box"
+          = form.submit "SEND", class: "form_submit"
+      - else
         %strong
-          = link_to comment.user.nickname, "/users/#{comment.user_id}"
-          ：
-          = comment.text
+          %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
 
-
-  =link_to 'トップページ', root_path
+    .comments
+      %h4 ＜コメント一覧＞
+      - if @comments
+        - @comments.each do |comment|
+          %p
+            %strong
+              = link_to comment.user.nickname, "/users/#{comment.user_id}"
+              ：
+              = comment.text  

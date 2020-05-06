@@ -13,7 +13,6 @@ class PostsController < ApplicationController
     else
       render :new
     end
-    
   end
   def destroy
     post=Post.find(params[:id])
@@ -39,6 +38,10 @@ class PostsController < ApplicationController
   end
   def search
     @posts = Post.search(params[:keyword])
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   private

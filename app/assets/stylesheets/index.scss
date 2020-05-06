@@ -12,7 +12,7 @@
     justify-content: space-between;
     align-items: center;
     &__left {
-
+  
     }
     &__search  {
       font-size: 30px;
@@ -39,7 +39,7 @@
         }
       }
     }
-    &__content  {
+    .contents  {
       background-color: lightcyan;
       height: 100%;
       width: 100%;
@@ -47,31 +47,23 @@
       justify-content: space-between;
       flex-wrap: wrap;
       overflow: scroll;
-      &__box  {
+      .main__content {
         margin: 10px 10px;
-        width: 288px;
-        height: 280px;
-        position: relative;
-        background-color: whitesmoke;
-        &__item {
-          background-color: peru;
-          height: 200px;
-          img {
-            width: 288px;
-            height: 200px;
-          }
+          width: 288px;
+          height: 280px;
+          position: relative;
+        &__video  {
+          
         }
-        &__text {
+        &__title {
+          background-color: rgb(231, 222, 213);
+        }
+        &__user {
           position: absolute;
           bottom: 0;
-          &__more {
-            display: inline;
-            &__list {
-              
-            }
           }
-        }
       }
+      
     }
   }
 }

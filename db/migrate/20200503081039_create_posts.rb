@@ -7,5 +7,6 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.timestamps
       t.references :user, index: true, foreign_key: true
     end
+    add_index :posts, :title, length: 32
   end
 end
