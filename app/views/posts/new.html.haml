@@ -1,7 +1,7 @@
 .wrapper
-  = render 'posts/index/header'     
-  .contents
-    .contents__new
+  = render 'posts/index/header'
+  .contents_new
+    .content_box
       = form_with model: @post, local: true do |f| 
         %h3 投稿する
         = render partial: "posts/index/form", locals: { f: f }

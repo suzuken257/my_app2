@@ -1,22 +1,5 @@
 .wrapper
-  .header
-    .header__left
-      <i class="fas fa-chess-queen"></i>
-    .header__search 
-      = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
-        = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
-        = form.submit "検索", class: "search-btn"
-    .header__right  
-    -if user_signed_in?
-      %span(class="header__right__login")
-        = link_to  "投稿する", new_post_path, class: "post"
-        = current_user.nickname 
-        = link_to "マイページ", "/users/#{current_user.id}"
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
-    -else
-      %span(class="header__right__login")
-        = link_to "新規登録", new_user_registration_path, class: 'post'
-        = link_to "ログイン", new_user_session_path, class: 'post'
+  = render 'posts/index/header'
   .main
     .main__side
       %ul
@@ -24,5 +7,5 @@
         %li お笑い
         %li 本
         %li 経済
-    .main__content
-      =render partial: "post", collection: @posts
+    .contents
+      = render partial: "/posts/index/post", collection: @posts
