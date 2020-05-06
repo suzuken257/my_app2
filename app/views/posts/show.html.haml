@@ -13,14 +13,14 @@
             %ul(class="show-main__content__text__more__list")
             -if user_signed_in? && current_user.id == @post.user_id
               %li
-                =link_to '編集', "/posts/#{@post.id}/edit", method: :get
+                =link_to '編集', "/posts/#{@post.id}/edit"
               %li
                 =link_to '削除', "/posts/#{@post.id}", method: :delete
       .container
       - if current_user
-        = form_with model: [@post, @comment], local: true do |form|
-          = form.text_area :text, placeholder: "コメントする", rows: "2"
-          = form.submit "SEND"
+        = form_with model: [@post, @comment], local: true, id: "new_comment" do |form|
+          = form.text_area :text, placeholder: "コメントする", rows: "2", class: "text_box"
+          = form.submit "SEND", class: "form_submit"
       - else
         %strong
           %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
@@ -33,6 +33,4 @@
             %strong
               = link_to comment.user.nickname, "/users/#{comment.user_id}"
               ：
-              = comment.text
-
-    =link_to 'トップページ', root_path  
+              = comment.text  

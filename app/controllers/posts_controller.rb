@@ -13,7 +13,6 @@ class PostsController < ApplicationController
     else
       render :new
     end
-    
   end
   def destroy
     post=Post.find(params[:id])
