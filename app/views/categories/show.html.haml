@@ -1,0 +1,10 @@
+.main
+  .main__side
+    %ul
+      %li スポーツ
+      %li お笑い
+      %li 
+        =link_to '本', "/category/#{@category1}"
+      %li 経済
+  .contents
+    = render partial: "/categories/post", collection: @posts

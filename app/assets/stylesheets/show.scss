@@ -1,0 +1,94 @@
+.show {
+  display: flex;
+  .show-main {
+    width: 70%;
+    &__content {
+      padding: 25px;
+      &__item {
+        
+      }
+      &__title {
+        background-color: whitesmoke;
+        padding: 20px 0 0px 30px;
+        height: 100px;
+        text-align: center;
+        font-size: 25px;
+        border-bottom: 1px solid ;
+      }
+        .date_edit{
+          background-color: seashell;
+          display: flex;
+          justify-content: space-between;
+          .created_date {
+            opacity: 0.7;
+            font-size: 14px;
+          }
+          .icon {
+            display: none;
+          }
+            .icon_list {
+              display: flex;
+              font-size: 16px;
+              list-style: none;
+              li {
+                margin-left: 5px;
+                .edit {
+                  text-decoration: none;
+                  color: #000;
+                  opacity: 0.7;
+                }
+                .deleat {
+                  text-decoration: none;
+                  color: #000;
+                  opacity: 0.7;
+                }
+              }
+            }
+        }
+          
+      
+      .user_name {
+        padding: 0 0 10px 70px;
+        height: 30px;
+        margin: 20px;
+        font-size: 20px;
+        .user-name {
+          color: black;
+          text-decoration: none;
+        }
+      }
+      &__text {
+        font-size: 20px;
+        padding-left: 50px;
+        margin: 10px;
+        border-bottom: 1px solid;
+        opacity: 0.7;
+
+      }
+      
+      .container {
+        margin: 50px;
+        #new_comment {
+          text-align: center;
+        }
+        .text_box {
+          width: 600px;
+          height: 50px;
+        }
+        .form_submit {
+          width: 50px;
+          height: 30px;
+        }
+
+      }
+      
+    }
+    .comments {
+      
+    }
+  }
+  .show-right {
+    width: 30%;
+    
+  }
+}
