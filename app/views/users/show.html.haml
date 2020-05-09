@@ -1,5 +1,5 @@
 .wrapper
-  = render 'posts/index/header'   
+  = render 'posts/index/header'
   .main_user
     %p
       = @nickname
@@ -20,3 +20,6 @@
                 =link_to '編集', "/posts/#{post.id}/edit"
                 %li
                 =link_to '削除', "/posts/#{post.id}", method: :delete
+  .side_user
+    = render "stats"
+    = render "follow_form" if user_signed_in?
