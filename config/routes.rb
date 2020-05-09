@@ -9,5 +9,10 @@ Rails.application.routes.draw do
     end
   end
   resources :category, only: :show
-  resources :users, only: :show
+  resources :users, only: [:show] do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :relationships, only: [:create, :destroy]
 end
