@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only:[:edit,:show]
   before_action :move_to_index, except: [:index, :show, :search]
+  before_action :set_category
   def index
     @posts = Post.includes(:user).order("created_at DESC")
   end
@@ -48,10 +49,27 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title,:video,:text,category_ids: []).merge(user_id: current_user.id)
   end
+
   def set_post
     @post=Post.find(params[:id])
   end
+
+  def set_category
+    book=Category.find(1)
+    sport=Category.find_by(name:"スポーツ")
+    comedy=Category.find_by(name:"お笑い")
+    makonari=Category.find_by(name:"まこなり社長")
+    economy=Category.find_by(name:"経済")
+
+    @book = book
+    @sport=sport
+    @comedy = comedy
+    @makonari=makonari
+    @economy=economy
+  end
+
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
+
 end

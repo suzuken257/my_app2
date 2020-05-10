@@ -1,25 +1,30 @@
 .wrapper
   = render 'posts/index/header'
-  .main_user
-    %p
-      = @nickname
-      さんの投稿一覧
-  - @posts.each do |post|
-    .main_user__box
-      .main_user__box__item 
-        %iframe#ytplayer{:frameborder => "0", :height => "400", :src => "https://www.youtube.com/embed/#{post.video}", :type => "text/html", :width => "600"}
-      .main_user__box__text
-        = simple_format(post.text)
-        %span(class=".main_user__box__text__more")
-          %i.fa.fa-list-ul
-            %ul(class=".main_user__box__text__more__list")
-              %li
-              =link_to '詳細', "/posts/#{post.id}"
+  .show
+    .show__left
+      .sport 
+        =link_to "#{@sport.name}", category_path(@sport.id)
+      .comedy 
+        =link_to "#{@comedy.name}", category_path(@comedy.id)
+      .book 
+        =link_to "#{@book.name}", category_path(@book.id)
+      .economy
+        =link_to "#{@economy.name}", category_path(@economy.id)
+      .people
+        =link_to "#{@makonari.name}", category_path(@makonari.id)
+      .show-left__group
+    .user-main
+      .user-image
+      .user-top
+        %h1= "#{@nickname}さんの投稿一覧"
+      .user-box
+        - @posts.each do |post|
+          .user-posts 
+            .user-posts__item
+              %iframe#ytplayer{:frameborder => "0", :height => "110", :width => "210", :src => "https://www.youtube.com/embed/#{post.video}", :type => "text/html"}
+            .user-box__title
+              = link_to "#{post.title}", "/posts/#{post.id}",class:"user-name"
+            .user-list
               -if user_signed_in? && current_user.id == post.user_id  
-                %li
-                =link_to '編集', "/posts/#{post.id}/edit"
-                %li
-                =link_to '削除', "/posts/#{post.id}", method: :delete
-  .side_user
-    = render "stats"
-    = render "follow_form" if user_signed_in?
+                =link_to '編集', "/posts/#{post.id}/edit", class:"edit"
+                =link_to '削除', "/posts/#{post.id}", method: :delete, class:"delete"

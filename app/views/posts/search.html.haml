@@ -2,10 +2,15 @@
   = render 'posts/index/header'
   .main
     .main__side
-      %ul
-        %li スポーツ
-        %li お笑い
-        %li 本
-        %li 経済
+      .sport 
+        =link_to "#{@sport.name}", category_path(@sport.id)
+      .comedy 
+        =link_to "#{@comedy.name}", category_path(@comedy.id)
+      .book 
+        =link_to "#{@book.name}", category_path(@book.id)
+      .economy
+        =link_to "#{@economy.name}", category_path(@economy.id)
+      .people
+        =link_to "#{@makonari.name}", category_path(@makonari.id)
     .contents
       = render partial: "/posts/index/post", collection: @posts

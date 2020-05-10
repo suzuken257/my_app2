@@ -1,7 +1,13 @@
 .show {
+  height: 90vh;
+  width: 100%;
   display: flex;
+  &__left {
+    width: 20%;
+  }
   .show-main {
     width: 70%;
+    overflow: scroll;
     &__content {
       padding: 25px;
       &__item {
@@ -86,9 +92,5 @@
     .comments {
       
     }
-  }
-  .show-right {
-    width: 30%;
-    
   }
 }

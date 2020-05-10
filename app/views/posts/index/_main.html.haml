@@ -1,21 +1,15 @@
 .main
   .main__side
-    .sport スポーツ
-    %ul
-      %li サッカー
-      %li バスケ
-      %li 野球
-      %li バレー
-
-    .comedy お笑い
-    %ul
-      %li コント
-      %li 一発芸
-    .book  本
-
-    .Economy 経済
-    %ul
-      %li まこなり社長
+    .sport 
+      =link_to "#{@sport.name}", category_path(@sport.id)
+    .comedy 
+      =link_to "#{@comedy.name}", category_path(@comedy.id)
+    .book 
+      =link_to "#{@book.name}", category_path(@book.id)
+    .economy
+      =link_to "#{@economy.name}", category_path(@economy.id)
+    .people
+      =link_to "#{@makonari.name}", category_path(@makonari.id)
   .contents
     .main-space
       %h1 あなたへのおすすめ

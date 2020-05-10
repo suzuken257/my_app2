@@ -1,6 +1,17 @@
 .wrapper
   = render 'posts/index/header'  
   .show
+    .show__left 
+      .sport 
+        =link_to "#{@sport.name}", category_path(@sport.id)
+      .comedy 
+        =link_to "#{@comedy.name}", category_path(@comedy.id)
+      .book 
+        =link_to "#{@book.name}", category_path(@book.id)
+      .economy
+        =link_to "#{@economy.name}", category_path(@economy.id)
+      .people
+        =link_to "#{@makonari.name}", category_path(@makonari.id)
     .show-main
       .show-main__content
         .show-main__content__item   
@@ -42,5 +53,3 @@
                 = link_to comment.user.nickname, "/users/#{comment.user_id}"
                 ：
                 = comment.text 
-    .show-right
-      .show-right__group

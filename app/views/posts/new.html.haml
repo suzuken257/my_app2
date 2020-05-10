@@ -1,7 +1,19 @@
 .wrapper
   = render 'posts/index/header'
-  .contents_new
-    %h3 投稿する
-    .content_box
-      = form_with model: @post, local: true do |f| 
-        = render partial: "posts/index/form", locals: { f: f }
+  .main
+    .main__side
+      .sport 
+        =link_to "#{@sport.name}", category_path(@sport.id)
+      .comedy 
+        =link_to "#{@comedy.name}", category_path(@comedy.id)
+      .book 
+        =link_to "#{@book.name}", category_path(@book.id)
+      .economy
+        =link_to "#{@economy.name}", category_path(@economy.id)
+      .people
+        =link_to "#{@makonari.name}", category_path(@makonari.id)
+    .contents_new
+      %h3 投稿する
+      .content_box
+        = form_with model: @post, local: true do |f| 
+          = render partial: "posts/index/form", locals: { f: f }

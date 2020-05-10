@@ -1,10 +1,16 @@
-.main
-  .main__side
-    %ul
-      %li スポーツ
-      %li お笑い
-      %li 
-        =link_to '本', "/category/#{@category1}"
-      %li 経済
-  .contents
-    = render partial: "/categories/post", collection: @posts
+.wrapper
+  = render 'posts/index/header'
+  .main
+    .main__side
+      .sport 
+        =link_to "#{@sport.name}", category_path(@sport.id)
+      .comedy 
+        =link_to "#{@comedy.name}", category_path(@comedy.id)
+      .book 
+        =link_to "#{@book.name}", category_path(@book.id)
+      .economy
+        =link_to "#{@economy.name}", category_path(@economy.id)
+      .people
+        =link_to "#{@makonari.name}", category_path(@makonari.id)
+    .contents
+      = render partial: "/categories/post", collection: @posts

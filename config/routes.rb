@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'categories/show'
   devise_for :users
   root "posts#index"
   resources :posts do
@@ -8,7 +7,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :category, only: :show
+  resources :categories, only: :show
   resources :users, only: [:show] do
     member do
       get :following, :followers
