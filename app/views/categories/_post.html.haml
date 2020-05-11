@@ -2,7 +2,6 @@
   .main__content__video 
     %iframe#ytplayer{:frameborder => "0", :height => "200", :src => "https://www.youtube.com/embed/#{post.video}", :type => "text/html", :width => "288"}
   .main__content__title
-    = @category
     =link_to "#{post.title}", "/posts/#{post.id}",class:"title"
   .main__content__user
     =link_to "#{post.user.nickname}", "/users/#{post.user.id}", class: "user-name"

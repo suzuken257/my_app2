@@ -13,4 +13,7 @@
       .people
         =link_to "#{@makonari.name}", category_path(@makonari.id)
     .contents
+      .main-space
+        %h1= @category
+          
       = render partial: "/categories/post", collection: @posts

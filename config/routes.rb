@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
   resources :categories, only: :show
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :edit, :update] do
     member do
       get :following, :followers
     end
