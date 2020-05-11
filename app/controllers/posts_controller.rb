@@ -10,8 +10,10 @@ class PostsController < ApplicationController
   end
   def create
     if Post.create(post_params)
-      redirect_to  "/users/#{current_user.id}", notice: '投稿が完了しました'
+      flash[:notice] = "投稿が完了しました"
+      redirect_to  "/users/#{current_user.id}"
     else
+      flash.now[:alert] = '投稿できませんでした'
       render :new
     end
   end
@@ -20,6 +22,7 @@ class PostsController < ApplicationController
     if post.destroy
       redirect_to "/users/#{current_user.id}", notice: '削除が完了しました'
     else
+      flash.now[:alert] = '削除できませんでした'
       render :destroy
     end
   end
@@ -30,7 +33,8 @@ class PostsController < ApplicationController
     if post.update(post_params)
       redirect_to "/users/#{current_user.id}", notice: '編集が完了しました'
     else
-      render :edit
+      flash.now[:alert] = '編集できませんでした'
+      render :edit 
     end
   end
   def show

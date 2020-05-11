@@ -5,6 +5,22 @@
   justify-content: space-between;
   align-items: center;
   &__left {
+    padding-left: 30px;
+    .left-menu {
+      display: inline;
+    }
+    .youtube {
+      padding-left: 20px;
+      display: inline;
+      font-size: 25px;
+      color: rgb(250, 0, 50);
+      text-decoration: none;
+      &__text {
+        font-size: 15px;
+        color: black;
+        font-family: sans-serif	
+      }
+    }
   }  
   &__search  {
     input:focus {

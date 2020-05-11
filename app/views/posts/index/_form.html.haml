@@ -2,9 +2,5 @@
   = f.text_field :title, placeholder: "title"
   = f.text_field :video, placeholder: "videoID"
   = f.text_area :text, placeholder: "text", rows: "10" 
-  = f.collection_check_boxes :category_ids, Category.all, :id, :name do |category|
-    = category.label do
-      %tr
-        %td= category.text
-        %td= category.check_box
+  = f.collection_select :category_ids, Category.all, :id, :name
   = f.submit "SEND"
