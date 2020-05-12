@@ -40,13 +40,13 @@ class UsersController < ApplicationController
     book=Category.find(1)
     sport=Category.find_by(name:"スポーツ")
     comedy=Category.find_by(name:"お笑い")
-    makonari=Category.find_by(name:"まこなり社長")
+    honda=Category.find_by(name:"本田圭佑")
     economy=Category.find_by(name:"経済")
 
     @book = book
     @sport=sport
     @comedy = comedy
-    @makonari=makonari
+    @honda=honda
     @economy=economy
   end
 end
