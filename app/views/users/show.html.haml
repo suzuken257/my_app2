@@ -15,7 +15,7 @@
     .user-main
       .user-top
         .user-top__image
-          -# = image_tag "#", size: "1124x200"
+          = image_tag "https://kigyotv.jp/newwp/wp-content/uploads/2016/02/d8bf18dc3dbe424174e0d50816933a78.png",class: 'user-image2', size: "1124x200"
         .user-top__bottom
           .user-top__bottom__left
             - if @image.present?
@@ -31,7 +31,7 @@
         - @posts.each do |post|
           .user-posts 
             .user-posts__item
-              %iframe#ytplayer{:frameborder => "0", :height => "110", :width => "210", :src => "https://www.youtube.com/embed/#{post.video}", :type => "text/html"}
+              %iframe#ytplayer{:frameborder => "0", :height => "110", :width => "210", :src => "https://www.youtube.com/embed/#{post.video}?start=#{(post.starta*60)+post.startb}&end=#{(post.enda*60)+post.endb}", :type => "text/html"}
             .user-box__title
               = link_to "#{post.title}", "/posts/#{post.id}",class:"user-name"
             .user-list
