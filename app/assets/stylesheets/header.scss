@@ -7,6 +7,7 @@
   &__left {
     padding-left: 30px;
     .left-menu {
+      cursor: pointer;
       display: inline;
     }
     .youtube {
@@ -45,9 +46,35 @@
 
   &__right  {
     font-size: 20px;
-    .user-image {
-      border-radius: 50px 50px;
+    &__login {
+      color: black;
+      
+      
+      .user_icon {
+        .user-image {
+          border-radius: 50px 50px;
+        }
+      }
+      
     }
   }
   }
+}
+.post {
+  color: black;
+
+}
+.post:hover {
+  background: rgb(255, 190, 137);
+
+  opacity: 0.7;
+
+}
+.logout {
+  color: black;
+}
+.logout:hover {
+  background: rgb(255, 190, 137);
+
+  opacity: 0.7;
 }
