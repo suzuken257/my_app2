@@ -13,8 +13,7 @@
       .people
         =link_to "#{@makonari.name}", category_path(@makonari.id)
     .contents_new
-      .contents_new__box
+      .content_box
         = form_with model: @post, local: true do |f| 
-          %h3 更新する
+          .new-post  更新する
           = render partial: "posts/index/form", locals: { f: f }
-          = link_to'投稿一覧へ戻る', root_path, class:'btn'

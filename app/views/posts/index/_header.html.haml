@@ -17,13 +17,14 @@
     = render "users/stats"
     = render "users/follow_form"
     %span.header__right__login
-      = link_to  "投稿する", new_post_path, class: "post"
+      = link_to  "投稿", new_post_path, class: "post"
       = current_user.nickname 
       = link_to "/users/#{current_user.id}" do
-        - if current_user.image.present?
-          = image_tag current_user.image.url, class: 'user-image',size: "30x30"
-        -else
-          マイページ
+        %sapn.user_icon
+          - if current_user.image.present?
+            = image_tag current_user.image.url, class: 'user-image',size: "30x30"
+          -else
+            マイページ
       = link_to "ログアウト", destroy_user_session_path, method: :delete
       .side_user
   -else

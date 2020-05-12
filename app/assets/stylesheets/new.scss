@@ -1,0 +1,33 @@
+.contents_new {
+  height: 65vh;
+  width: 100%;
+  margin-top: 150px;
+  .content_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .new-post {
+      font-size: 25px;
+      text-align: center;
+    }
+    .form__field {
+      width: auto;
+      margin-top: 10px;
+      #post_title {
+        width: 600px;
+        height: 40px;
+      }
+      #post_video {
+        width: 600px;
+        height: 40px;
+      }
+      #post_text {
+        width: 600px;
+        height: 220px;
+        overflow: scroll;
+      }
+      
+    }
+  }
+}

@@ -45,6 +45,9 @@
 
   &__right  {
     font-size: 20px;
+    .user-image {
+      border-radius: 50px 50px;
+    }
   }
   }
 }

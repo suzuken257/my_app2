@@ -1,10 +1,14 @@
-%p
+.form__field
   = f.text_field :title, placeholder: "title"
+.form__field
   = f.text_field :video, placeholder: "videoID"
+.form__field
   = f.text_area :text, placeholder: "text", rows: "10" 
+.form__field
   = f.collection_check_boxes :category_ids, Category.all, :id, :name do |category|
     = category.label do
       %tr
         %td= category.check_box
         %td= category.text
+.form__field
   = f.submit "SEND"

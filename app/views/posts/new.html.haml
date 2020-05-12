@@ -13,7 +13,7 @@
       .people
         =link_to "#{@makonari.name}", category_path(@makonari.id)
     .contents_new
-      %h3 投稿する
-      .content_box
+      .content_box 
         = form_with model: @post, local: true do |f| 
+          .new-post 投稿する
           = render partial: "posts/index/form", locals: { f: f }
