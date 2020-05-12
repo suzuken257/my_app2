@@ -2,6 +2,7 @@
   - if @image.present?
     = image_tag @image.url, class: 'account-page__inner--icon__input__image', width: '10%',height:'10%'
   .account-page__inner--icon__input__image2
+    = f.label :image %br/
     = f.file_field :image, class: 'account-page__inner--icon__input__btn', id: 'upload-icon'
 
   .account-page__inner--user-form

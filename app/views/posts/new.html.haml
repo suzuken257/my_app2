@@ -2,16 +2,16 @@
   = render 'posts/index/header'
   .main
     .main__side
-      .sport 
-        =link_to "#{@sport.name}", category_path(@sport.id)
-      .comedy 
-        =link_to "#{@comedy.name}", category_path(@comedy.id)
-      .book 
-        =link_to "#{@book.name}", category_path(@book.id)
-      .economy
-        =link_to "#{@economy.name}", category_path(@economy.id)
-      .people
-        =link_to "#{@makonari.name}", category_path(@makonari.id)
+      .categories 
+        =link_to "#{@sport.name}", category_path(@sport.id) ,class:"category-name1"
+      .categories 
+        =link_to "#{@comedy.name}", category_path(@comedy.id),class:"category-name1"
+      .categories 
+        =link_to "#{@book.name}", category_path(@book.id),class:"category-name1"
+      .categories
+        =link_to "#{@economy.name}", category_path(@economy.id),class:"category-name1"
+      .categories
+        =link_to "#{@makonari.name}", category_path(@makonari.id),class:"category-name1"
     .contents_new
       .content_box 
         = form_with model: @post, local: true do |f| 

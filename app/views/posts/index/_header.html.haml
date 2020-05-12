@@ -20,7 +20,7 @@
         = link_to "/users/#{current_user.id}" do
           %sapn.user_icon
             - if current_user.image.present?
-              = image_tag current_user.image.url, class: 'user-image',size: "30x30"
+              = image_tag current_user.image.url, class: 'user-icon',size: "30x30"
             -else
               マイページ
         = link_to "ログアウト", destroy_user_session_path, class: "logout", method: :delete

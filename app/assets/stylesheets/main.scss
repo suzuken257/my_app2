@@ -4,13 +4,10 @@
   display: flex;
 
   &__side {
-    width: 243px;
+    width: 236px;
     height: auto;
-    ul{
-      li {
-        font-size: 15px;
-      }
-    }
+    padding-left: 30px; 
+    padding-top: 30px;
   }
   .contents  {
     height: 100%;
@@ -61,4 +58,16 @@
     }
     
   }
+}
+.category-name1 {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+.category-name1:hover {
+  background: rgb(255, 190, 137);
+  opacity: 0.7;
+}
+.categories {
+  margin-top: 10px;
 }
