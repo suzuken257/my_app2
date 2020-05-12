@@ -15,7 +15,7 @@
     .show-main
       .show-main__content
         .show-main__content__item   
-          %iframe#ytplayer{:frameborder => "0", :height => "550", :width => "960", :src => "https://www.youtube.com/embed/#{@post.video}?start=#{(post.starta*60)+post.startb}&end=#{(post.enda*60)+post.endb}", :type => "text/html"}
+          %iframe#ytplayer{:frameborder => "0", :height => "550", :width => "960", :src => "https://www.youtube.com/embed/#{@post.video}?start=#{(@post.starta*60)+@post.startb}&end=#{(@post.enda*60)+@post.endb}", :type => "text/html"}
         .show-main__content__title
           = @post.title
           .date_edit
