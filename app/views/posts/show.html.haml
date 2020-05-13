@@ -1,6 +1,6 @@
 .wrapper
   = render 'posts/index/header'  
-  .show
+  .main
     .main__side
       .categories 
         =link_to "#{@sport.name}", category_path(@sport.id) ,class:"category-name1"

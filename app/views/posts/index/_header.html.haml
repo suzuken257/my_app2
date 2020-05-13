@@ -4,7 +4,7 @@
       <i class="fas fa-grip-lines"></i>
     =link_to root_path, class: "youtube" do
       <i class="fab fa-youtube"></i>
-      %span.youtube__text YouTube
+      %span.youtube__text OutPut
   .header__search 
     = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
       = form.text_field :keyword, placeholder: "検索", class: "search-input"

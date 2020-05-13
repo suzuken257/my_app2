@@ -1,6 +1,6 @@
 .wrapper
   = render 'posts/index/header'
-  .show
+  .main
     .main__side
       .categories 
         =link_to "#{@sport.name}", category_path(@sport.id) ,class:"category-name1"
@@ -22,11 +22,16 @@
               = image_tag @image.url, class: 'user-image', width: '50%',height:'50%'
             .user-edit
               = link_to "プロフィール変更", "/users/#{@user.id}/edit"
-          .user-top__bottom__right
-            .user-top__bottom__right__top
-              %h1= "#{@nickname}の投稿一覧"
-            .user-top__bottom__right__bottom
-              = simple_format(@profile) 
+          .user-top__bottom__center
+            %h1= "#{@nickname}の投稿一覧"
+            %p.twiter
+              <i class="fab fa-twitter-square"></i>
+              %span.instagram
+                <i class="fab fa-instagram"></i>
+              %span.facebook
+                <i class="fab fa-facebook-square"></i>
+          .user-top__bottom__bottom
+            = simple_format(@profile) 
       .user-box
         - @posts.each do |post|
           .user-posts 

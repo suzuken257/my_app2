@@ -1,9 +1,12 @@
-.show {
+.main {
   height: 90vh;
   width: 100%;
   display: flex;
-  &__left {
-    width: 20%;
+  .main__side {
+    width: 236px;
+    height: auto;
+    padding-left: 30px; 
+    padding-top: 30px;
   }
   .show-main {
     width: 70%;
