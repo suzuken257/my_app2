@@ -2,16 +2,15 @@
   .header__left
     .left-menu
       <i class="fas fa-grip-lines"></i>
-    =link_to root_path, class: "youtube" do
-      <i class="fab fa-youtube"></i>
-      %span.youtube__text OutPut
+      =link_to root_path, class: "youtube" do
+        <i class="fab fa-youtube"></i>
+        %span.youtube__text OutPut
+    %span#datetime
   .header__search 
     = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
       = form.text_field :keyword, placeholder: "検索", class: "search-input"
       %button.search-btn{:type => "submit"}
         %i.fas.fa-search
-
-      -# = form.submit "検索", class: "search-btn"
   .header__right
     -if user_signed_in?
       %span.header__right__login

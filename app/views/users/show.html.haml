@@ -30,6 +30,10 @@
                 <i class="fab fa-instagram"></i>
               %span.facebook
                 <i class="fab fa-facebook-square"></i>
+            .follow
+              = render 'follow_form'
+            .follower
+              = render 'stats'
           .user-top__bottom__bottom
             = simple_format(@profile) 
       .user-box
