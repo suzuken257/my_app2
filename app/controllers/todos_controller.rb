@@ -7,6 +7,16 @@ class TodosController < ApplicationController
     end
   end
 
+  def destroy
+    todo=Todo.find(params[:id])
+    if todo.destroy
+      redirect_to "/users/#{current_user.id}", notice: '削除が完了しました'
+    else
+      flash.now[:alert] = '削除できませんでした'
+      render :destroy
+    end
+  end
+
   private
   def todo_params
     params.require(:todo).permit(:content).merge(user_id: current_user.id)

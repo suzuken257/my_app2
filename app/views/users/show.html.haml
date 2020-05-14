@@ -15,7 +15,7 @@
     .user-main
       .user-top
         .user-top__image
-          = image_tag "https://kigyotv.jp/newwp/wp-content/uploads/2016/02/d8bf18dc3dbe424174e0d50816933a78.png",class: 'user-image2', size: "1215x190"
+          = image_tag "https://kigyotv.jp/newwp/wp-content/uploads/2016/02/d8bf18dc3dbe424174e0d50816933a78.png",class: 'user-image2'
         .user-top__bottom
           .user-top__bottom__left
             - if @image.present?
@@ -23,7 +23,7 @@
             .user-edit
               = link_to "プロフィール変更", "/users/#{@user.id}/edit"
           .user-top__bottom__center
-            %h1= "#{@nickname}の投稿"
+            %h1= "#{@nickname}"
             %p.twiter
               <i class="fab fa-twitter-square"></i>
               %span.instagram
@@ -40,7 +40,7 @@
             .todo_form
               - if current_user == @user
                 = form_with model: [@user, @todo], local: true, id: "new_todo" do |f|
-                  = f.text_field :content, placeholder: "TO-DO", rows: "2", class: "todo_box"
+                  = f.text_field :content, placeholder: "to-do", rows: "2", class: "todo_box"
                   = f.submit "SEND", class: "form_submit"
               - else
                 %strong
@@ -51,6 +51,8 @@
                   %p
                     %strong
                       = todo.content 
+                      %span
+                        =link_to '削除', "/users/#{current_user.id}/todos/#{todo.id}", method: :delete,class:"delete"
 
       .user-box
         - @posts.each do |post|
