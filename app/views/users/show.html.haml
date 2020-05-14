@@ -23,7 +23,7 @@
             .user-edit
               = link_to "プロフィール変更", "/users/#{@user.id}/edit"
           .user-top__bottom__center
-            %h1= "#{@nickname}の投稿一覧"
+            %h1= "#{@nickname}の投稿"
             %p.twiter
               <i class="fab fa-twitter-square"></i>
               %span.instagram
@@ -35,7 +35,23 @@
             .follower
               = render 'stats'
           .user-top__bottom__bottom
-            = simple_format(@profile) 
+            = simple_format(@profile)
+          .user-top__bottom__right
+            .todo_form
+              - if current_user == @user
+                = form_with model: [@user, @todo], local: true, id: "new_todo" do |f|
+                  = f.text_field :content, placeholder: "TO-DO", rows: "2", class: "todo_box"
+                  = f.submit "SEND", class: "form_submit"
+              - else
+                %strong
+                  %p ※※※ TO-Doの投稿には新規登録/ログインが必要です ※※※
+            .todo-box
+              - if @todos
+                - @todos.each do |todo|
+                  %p
+                    %strong
+                      = todo.content 
+
       .user-box
         - @posts.each do |post|
           .user-posts 

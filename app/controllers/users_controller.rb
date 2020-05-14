@@ -7,11 +7,21 @@ class UsersController < ApplicationController
     @profile=@user.profile
     @nickname=@user.nickname
     @posts=@user.posts.order("created_at DESC")
+    @todo=Todo.new
+    @todos = @user.todos.includes(:user)
   end
 
   def edit
     user = User.find(params[:id])
     @image = user.image
+  end
+
+  def create
+    @user = User.create(user_params)
+    respond_to do |format|
+      format.html { redirect_to user_path(params[:user_id]) }
+      format.json
+    end
   end
 
   def update
