@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
   end
   private
   def set_category
-    book=Category.find(1)
+    book=Category.find_by(name:"本")
     sport=Category.find_by(name:"スポーツ")
     comedy=Category.find_by(name:"お笑い")
     honda=Category.find_by(name:"本田圭佑")
