@@ -1,6 +1,7 @@
 .main__content
   .main__content__video 
-    %iframe#ytplayer{:frameborder => "0", :height => "180", :width => "288", :src => "https://www.youtube.com/embed/#{post.video}?start=#{(post.starta*60)+post.startb}&end=#{(post.enda*60)+post.endb}"}
+    %iframe#ytplayer{:frameborder => "0", :height => "180", :width => "288", 
+    :src => "https://www.youtube.com/embed/#{post.video}?start=#{(post.starta*60)+post.startb}&end=#{(post.enda*60)+post.endb}"}
   .main__content__title
     =link_to "#{post.title}", "/posts/#{post.id}",class: "title"
   .main__content__user
