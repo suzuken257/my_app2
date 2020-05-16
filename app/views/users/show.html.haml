@@ -44,7 +44,7 @@
             .todo_form
               - if current_user == @user
                 = form_with model: [@user, @todo], local: true, id: "new_todo" do |f|
-                  = f.text_field :content, placeholder: "to-do", rows: "2", class: "todo_box"
+                  = f.text_field :content, placeholder: "アクション", rows: "2", class: "todo_box"
                   = f.submit "SEND", class: "form_submit"
               - else
                 %strong

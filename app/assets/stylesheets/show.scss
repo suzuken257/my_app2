@@ -99,3 +99,29 @@
     
   }
 }
+@media screen and (max-width:480px){
+  #ytplayer {
+    width: 100%!important;
+    height: 210px;
+  }
+  .show-main__content {
+    padding: 0!important;
+    margin: 0!important;
+  }
+  .show-main__content__title {
+    height: 0!important;
+    font-size: 20px!important;
+  }
+  .user_name {
+    height: 30px!important;
+    margin: 15px!important;
+    font-size: 0!important;
+  }
+  .container {
+    margin: 25px!important;
+  }
+  .text_box {
+    width: 100%!important;
+    height: auto!important;
+  }
+}
