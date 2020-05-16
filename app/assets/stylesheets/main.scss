@@ -94,18 +94,33 @@
       flex-wrap: wrap;
       overflow: scroll;
       background-color: #f8f6f5;
-      overflow: scroll;
-      padding-left: 25px;
+      overflow: scroll!important;
+      padding-left: 0!important;
       .main-space {
         height: 50px;
         width: 100%;
         display: flex;
         align-items: center;
         h1 {
-          font-size: 15px;
+          font-size: 15px!important;
           padding-left: 5px;
         }
       }
     } 
   }
+
+.main__content {
+  width: 40%!important;
+  height: 40%!important;
+}
+#post-ytplayer {
+  width: 100%;
+  height: 100px;
+}
+.main__content__title {
+  margin: 0!important;
+}
+.main__content__user {
+  padding-bottom: 0!important;
+}
 }

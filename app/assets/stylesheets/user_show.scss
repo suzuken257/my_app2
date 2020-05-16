@@ -177,4 +177,25 @@ h1 {
   overflow: scroll;
   height: 135px;
 }
+.user-box {
+  padding: 0!important;
+}
+.user-posts {
+  height:45%!important;
+  width: 45%;
+}
+.user-posts__item {
+  width: 100%!important;
+  height: 100px!important;
+}
+#user-ytplayer {
+  width: 100%!important;
+  height: 100%!important;
+}
+.user-box__title {
+  width: 100%!important;
+}
+.user-list {
+  font-size: 15px;
+}
 }

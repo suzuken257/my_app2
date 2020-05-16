@@ -6,7 +6,7 @@ $(document).on('turbolinks:load', function(){
       var html = `
       <div class='main__content'>
         <div class='main__content__video'>
-          <iframe frameborder='0' height='200' id='ytplayer' src='https://www.youtube.com/embed/${post.video}' type='text/html' width='288'></iframe>
+          <iframe frameborder='0' height='200' id='post-ytplayer' src='https://www.youtube.com/embed/${post.video}' type='text/html' width='288'></iframe>
         </div>
         <div class='main__content__title'>
           <a href="/posts/${post.id}">${post.title}</a>
