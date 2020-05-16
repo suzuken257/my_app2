@@ -75,7 +75,7 @@
 @media screen and (max-width:480px){
   .main {
     display: block!important;
-    height: auto;
+    height: 85%!important;
     .main__side {
       width: 100%;
       height: auto;
@@ -85,14 +85,8 @@
       }
     }
     .contents  {
-      height: auto;
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      overflow: scroll;
-      background-color: #f8f6f5;
-      overflow: scroll!important;
       padding-left: 0!important;
+      height: auto!important;
       .main-space {
         height: 50px;
         width: 100%;
@@ -105,7 +99,6 @@
       }
     } 
   }
-
 .main__content {
   width: 40%!important;
   height: 40%!important;
