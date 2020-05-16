@@ -76,11 +76,13 @@
   margin-top: 10px;
 }
 @media screen and (max-width:480px){
-  .main .main__side {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    display: block!important;
+  .main {
+display: block!important;
+    .main__side {
+      width: 100%;
+      height: auto;
+      padding-top: 0;
+    }
     .categories {
       display: inline;
     }
