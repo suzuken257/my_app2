@@ -75,3 +75,14 @@
 .categories {
   margin-top: 10px;
 }
+@media screen and (max-width:480px){
+  .main .main__side {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: block!important;
+    .categories {
+      display: inline;
+    }
+  }
+}
