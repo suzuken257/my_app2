@@ -44,7 +44,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:id, :name, :email, :image, :profile)
+    params.require(:user).permit(:id, :nickname, :email, :image, :profile)
   end
   def set_category
     book=Category.find_by(name:"本")

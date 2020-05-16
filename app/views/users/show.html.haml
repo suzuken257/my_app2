@@ -25,16 +25,20 @@
           .user-top__bottom__center
             %h1= "#{@nickname}"
             %p.twiter
-              <i class="fab fa-twitter-square"></i>
+              =link_to "https://twitter.com/",class:"twiter__icon" do
+                <i class="fab fa-twitter-square"></i>
               %span.instagram
-                <i class="fab fa-instagram"></i>
+                =link_to "https://instagram.com/",class:"instagram__icon" do
+                  <i class="fab fa-instagram"></i>
               %span.facebook
-                <i class="fab fa-facebook-square"></i>
+                =link_to "https://facebook.com/",class:"facebook__icon" do
+                  <i class="fab fa-facebook-square"></i>
             .follow
               = render 'follow_form'
             .follower
               = render 'stats'
           .user-top__bottom__bottom
+            %h3 profile
             = simple_format(@profile)
           .user-top__bottom__right
             .todo_form

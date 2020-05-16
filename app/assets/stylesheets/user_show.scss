@@ -38,17 +38,21 @@
           font-size: 20px;
           padding-top: 20px;
           .twiter {
-            color: rgb(0, 180, 240);
-            cursor: pointer;
             padding-top: 10px;
+            font-size: 30px;
+            &__icon {
+              color: rgb(0, 180, 240);
+            }
           }
           .instagram {
-            color: rgb(123, 59, 168);
-            cursor: pointer;
+            &__icon {
+              color: rgb(123, 59, 168);
+            }
           }
           .facebook{
-            color: rgb(0, 49, 185);
-            cursor: pointer;
+            &__icon {
+              color: rgb(0, 49, 185);
+            }
           }
         }
         &__bottom {

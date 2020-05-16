@@ -17,11 +17,11 @@
         = link_to  "投稿", new_post_path, class: "post"
         = current_user.nickname 
         = link_to "/users/#{current_user.id}" do
-          %sapn.user_icon
+          %span.user_icon
             - if current_user.image.present?
               = image_tag current_user.image.url, class: 'user-icon',size: "30x30"
             -else
-              マイページ
+              %span.mypage マイページ
         = link_to "ログアウト", destroy_user_session_path, class: "logout", method: :delete
         .side_user
     -else

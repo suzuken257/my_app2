@@ -1,12 +1,12 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   function buildHTML(comment){
-    var html = `<p>
+    var html = `<div>
                   <strong>
                     <a href=/users/${comment.user_id}>${comment.user_name}</a>
                     ：
+                    ${comment.text}
                   </strong>
-                  ${comment.text}
-                </p>`
+                </div>`
     return html;
   }
   $('#new_comment').on('submit', function(e){
@@ -24,6 +24,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.comments').append(html);
+      $('.comments').animate({ scrollTop: $('.comments')[0].scrollHeight});
       $('.text_box').val('');
       $('.form_submit').prop('disabled', false);
     })

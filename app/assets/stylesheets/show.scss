@@ -16,7 +16,7 @@
       }
       &__title {
         background-color: whitesmoke;
-        padding: 20px 0 0px 30px;
+        padding-top: 20px;
         height: 100px;
         text-align: center;
         font-size: 25px;
@@ -54,7 +54,6 @@
           
       
       .user_name {
-        padding: 0 0 10px 70px;
         height: 30px;
         margin: 20px;
         font-size: 20px;
@@ -65,7 +64,6 @@
       }
       &__text {
         font-size: 20px;
-        padding-left: 50px;
         margin: 10px;
         border-bottom: 1px solid;
         opacity: 0.7;
@@ -90,10 +88,14 @@
         }
 
       }
+      .comments {
+        overflow: scroll;
+        height: 30%;
+        width: 100%;
+        border-top: 1px solid;
+      }
       
     }
-    .comments {
-      
-    }
+    
   }
 }

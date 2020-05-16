@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :video, presence: true
   validates :text, presence: true
-  belongs_to :user
+  belongs_to :user 
   has_many  :comments, dependent: :destroy
   has_many :post_categories, dependent: :destroy
   has_many :categories, through: :post_categories, dependent: :destroy

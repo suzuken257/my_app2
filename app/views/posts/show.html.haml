@@ -34,6 +34,16 @@
         
         .show-main__content__text
           = simple_format(@post.text)
+      
+        <!-- AddToAny BEGIN -->
+        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+        <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+        <a class="a2a_button_facebook"></a>
+        <a class="a2a_button_twitter"></a>
+        <a class="a2a_button_google_plus"></a>
+        </div>
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <!-- AddToAny END -->
         
         .container
           - if current_user
@@ -44,12 +54,12 @@
             %strong
               %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
 
-      .comments
-        %h4 ＜コメント一覧＞
-        - if @comments
-          - @comments.each do |comment|
-            %p
-              %strong
-                = link_to comment.user.nickname, "/users/#{comment.user_id}"
-                ：
-                = comment.text 
+        .comments
+          %h4 ＜コメント一覧＞
+          - if @comments
+            - @comments.each do |comment|
+              .comment{data: {comment: {id: comment.id}}}
+                %strong
+                  = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                  ：
+                  = comment.text 
