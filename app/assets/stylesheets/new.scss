@@ -32,3 +32,37 @@
     }
   }
 }
+@media screen and (max-width:480px){
+  .contents_new {
+    height: 88%;
+    width: 100%;
+    margin-top: 10px;
+    background-color: #f8f6f5;
+    .content_box {
+      display: block!important;
+      text-align: center;
+      .new-post {
+        font-size: 20px;
+        padding-top: 10px;
+      }
+      .form__field {
+        width: auto;
+        margin-top: 10px;
+        #post_title {
+          width: 60%;
+          height: 20px;
+        }
+        #post_video {
+          width: 50%;
+          height: 20px;
+        }
+        #post_text {
+          width: 60%;
+          height: 150px;
+          overflow: scroll;
+        }
+        
+      }
+    }
+  }
+}

@@ -77,14 +77,35 @@
 }
 @media screen and (max-width:480px){
   .main {
-display: block!important;
+    display: block!important;
+    height: auto;
     .main__side {
       width: 100%;
       height: auto;
       padding-top: 0;
+      .categories {
+        display: inline;
+      }
     }
-    .categories {
-      display: inline;
-    }
+    .contents  {
+      height: auto;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: scroll;
+      background-color: #f8f6f5;
+      overflow: scroll;
+      padding-left: 25px;
+      .main-space {
+        height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        h1 {
+          font-size: 15px;
+          padding-left: 5px;
+        }
+      }
+    } 
   }
 }
