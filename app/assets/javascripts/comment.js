@@ -19,7 +19,7 @@ $(function(){
     var last_comment_id = $('.comment:last').data("comment-id");
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
-      url: "api/messages/post_id",
+      url: 'api/messages/${post_id}',
       //ルーティングで設定した通りhttpメソッドをgetに指定
       type: 'get',
       dataType: 'json',

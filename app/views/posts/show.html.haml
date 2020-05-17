@@ -60,8 +60,9 @@
             - @comments.each do |comment|
               .comment{data: {comment: {id: comment.id}}}
                 %strong
-                  = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                  = link_to comment.user.nickname, "/users/#{comment.user_id}",class:"user-name"
                   ：
                   = comment.text 
-                  %span
-                    =link_to '削除',  "/posts/#{@post.id}/comments/#{comment.id}", method: :delete,class:"delete"
+                  -if current_user
+                    %span
+                      =link_to '削除',  "/posts/#{@post.id}/comments/#{comment.id}", method: :delete,class: "delete"

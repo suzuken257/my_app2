@@ -11,9 +11,6 @@
       padding: 25px;
       margin: 0 50px;
       text-align: center;
-      &__item {
-        
-      }
       &__title {
         background-color: whitesmoke;
         padding-top: 20px;
@@ -51,8 +48,6 @@
               }
             }
         }
-          
-      
       .user_name {
         height: 30px;
         margin: 20px;
@@ -98,6 +93,14 @@
     }
     
   }
+.delete {
+  text-decoration: none;
+  color: #000;
+  opacity: 0.7;
+}
+.user-name {
+  color: #000;
+}
 }
 @media screen and (max-width:480px){
   #show-ytplayer {

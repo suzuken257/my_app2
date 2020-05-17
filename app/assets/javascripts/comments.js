@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function(){
   function buildHTML(comment){
     var html = `<div>
                   <strong>
-                    <a href=/users/${comment.user_id}>${comment.user_name}</a>
+                    <a class="user-name" href=/users/${comment.user_id}>${comment.user_name}</a>
                     ：
                     ${comment.text}
                   </strong>
