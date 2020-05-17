@@ -64,12 +64,14 @@ class PostsController < ApplicationController
     comedy=Category.find_by(name:"お笑い")
     honda=Category.find_by(name:"本田圭佑")
     economy=Category.find_by(name:"経済")
+    makonari=Category.find_by(name:"まこなり社長")
 
     @book = book
     @sport=sport
     @comedy = comedy
     @honda=honda
     @economy=economy
+    @makonari=makonari
   end
 
   def move_to_index

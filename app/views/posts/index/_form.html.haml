@@ -4,15 +4,15 @@
   = f.text_field :video, placeholder: "videoID"
 .form__field
   スタート
-  = f.number_field :starta, placeholder: "分"
+  = f.number_field :starta, placeholder: "分",class:"start-stop"
   %span 分
-  %span= f.number_field :startb, placeholder: "秒"
+  %span= f.number_field :startb, placeholder: "秒",class:"start-stop"
   %span 秒
 .form__field
   ストップ
-  = f.number_field :enda, placeholder: "分"
+  = f.number_field :enda, placeholder: "分",class:"start-stop"
   %span 分
-  %span= f.number_field :endb, placeholder: "秒"
+  %span= f.number_field :endb, placeholder: "秒",class:"start-stop"
   %span 秒
 .form__field
   = f.text_area :text, placeholder: "text", rows: "10" 
