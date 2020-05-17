@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :posts, only: :show, defaults: { format: 'json' }
   end
-    resources :comments, only: :create
+    resources :comments, only: [:create, :destroy]
     collection do
       get 'search'
     end

@@ -63,3 +63,5 @@
                   = link_to comment.user.nickname, "/users/#{comment.user_id}"
                   ：
                   = comment.text 
+                  %span
+                    =link_to '削除',  "/posts/#{@post.id}/comments/#{comment.id}", method: :delete,class:"delete"

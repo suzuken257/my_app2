@@ -6,6 +6,9 @@ $(document).on('turbolinks:load', function(){
                     ：
                     ${comment.text}
                   </strong>
+                  <span>
+                  <a class="delete" rel="nofollow" data-method="delete" href="/posts/${comment.post_id}/comments/${comment.id}">削除</a>
+                  </span>
                 </div>`
     return html;
   }

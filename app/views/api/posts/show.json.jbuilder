@@ -4,4 +4,4 @@ json.array!@comments do |comment|
   json.user_name  comment.user.nickname
   json.id comment.id
 end
-json.post_id  post.id
+json.post_id  @post.id
