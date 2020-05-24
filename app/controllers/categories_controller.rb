@@ -7,18 +7,20 @@ class CategoriesController < ApplicationController
   end
   private
   def set_category
-    book=Category.find_by(name:"本")
-    sport=Category.find_by(name:"スポーツ")
-    comedy=Category.find_by(name:"お笑い")
-    honda=Category.find_by(name:"本田圭佑")
-    economy=Category.find_by(name:"経済")
-    makonari=Category.find_by(name:"まこなり社長")
+    category1=Category.find(1)
+    category2=Category.find(2)
+    category3=Category.find(3)
+    category4=Category.find(4)
+    category5=Category.find(5)
+    category6=Category.find(6)
+    category7=Category.find(7)
 
-    @book = book
-    @sport=sport
-    @comedy = comedy
-    @honda=honda
-    @economy=economy
-    @makonari=makonari
+    @category1=category1
+    @category2=category2
+    @category3=category3
+    @category4=category4
+    @category5=category5
+    @category6=category6
+    @category7=category7
   end
 end

@@ -15,7 +15,7 @@
   %span= f.number_field :endb, placeholder: "秒",class:"start-stop"
   %span 秒
 .form__field
-  = f.text_area :text, placeholder: "text", rows: "10" 
+  = f.text_area :text, placeholder: "output", rows: "10" 
 .form__field
   = f.collection_check_boxes :category_ids, Category.all, :id, :name do |category|
     = category.label do
